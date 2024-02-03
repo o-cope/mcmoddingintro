@@ -1,6 +1,7 @@
 package net.cope.tutorialmod;
 
 import com.mojang.logging.LogUtils;
+import net.cope.tutorialmod.block.ModBlocks;
 import net.cope.tutorialmod.item.ModItems;
 import net.cope.tutorialmod.item.ModCreativeModeTabs;
 import net.minecraft.client.Minecraft;
@@ -30,8 +31,10 @@ public class TutorialMod
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
-        ModItems.ITEMS.register(modEventBus);
         ModCreativeModeTabs.CREATIVE_MODE_TABS.register(modEventBus);
+
+        ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
