@@ -1,6 +1,7 @@
 package net.cope.tutorialmod.block;
 
 import net.cope.tutorialmod.TutorialMod;
+import net.cope.tutorialmod.block.custom.SoundBlock;
 import net.cope.tutorialmod.item.ModItems;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
@@ -41,6 +42,8 @@ public class ModBlocks {
     public static final RegistryObject<Block> END_SAPPHIRE_ORE = registerBlock("end_sapphire_ore",
             () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.END_STONE)
                     .strength(5.0F).requiresCorrectToolForDrops(), UniformInt.of(2, 3)));
+    public static final RegistryObject<Block> SOUND_BLOCK = registerBlock("sound_block",
+            () -> new SoundBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
 
 
 
